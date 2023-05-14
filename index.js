@@ -25,7 +25,7 @@ app.get("/api/:date?", checkDate, function (req, res) {
     newDate = new Date(date);
   }
 
-  const unixtime = newDate.getTime();
+  const unixtime = Number(newDate.getTime());
   const claveUTC = newDate.toUTCString();
   res.json({ unix: unixtime, utc: claveUTC });
 });
