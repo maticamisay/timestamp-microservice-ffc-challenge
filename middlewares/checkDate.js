@@ -4,7 +4,7 @@ module.exports = function (req, res, next) {
   // console.log(date);
   if (/^\d+$/.test(date)) {
     // Convertimos la date de tiempo a un objeto Date
-    const fechaObjeto = new Date(Number(date)*1000);
+    const fechaObjeto = new Date(Number(date));
 
     // Formateamos la fecha al formato "YYYY-MM-DD"
     const fecha = fechaObjeto.toISOString().split("T")[0];

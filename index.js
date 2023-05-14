@@ -17,7 +17,7 @@ app.get("/", function (req, res) {
 app.get("/api/:date?", checkDate, function (req, res) {
   const { date } = req.params;
   let newDate = new Date();
-
+  console.log(date);
   if (date) {
     if (validarFechaInvalida(date)) {
       return res.json({ error: "Invalid Date" });
