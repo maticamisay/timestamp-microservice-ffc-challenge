@@ -4,8 +4,7 @@ function validarFechaInvalida(entrada) {
   // Verificamos si la entrada es una marca de tiempo Unix
   if (/^\d+$/.test(entrada)) {
     // Convertimos la marca de tiempo Unix a un objeto Date
-    // Multiplicamos por 1000 para convertir de segundos a milisegundos
-    fechaObjeto = new Date(Number(entrada) * 1000);
+    fechaObjeto = new Date(Number(entrada));
   } else if (entrada.includes("-")) {
     // La entrada es una fecha en formato "YYYY-MM-DD"
     fechaObjeto = new Date(entrada);
