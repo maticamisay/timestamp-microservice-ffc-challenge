@@ -1,0 +1,27 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "Este es un microservicio de marca de tiempo, un proyecto para freeCodeCamp. Acepta una fecha (cadena o Unix) y devuelve la fecha en formato Unix y UTC. Si no se proporciona una fecha, devuelve la fecha y hora actuales",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "freeCodeCamp",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "microservicio",
+    "timestamp",
+    "fecha",
+    "Unix",
+    "UTC"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
