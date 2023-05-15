@@ -1,9 +1,7 @@
 const express = require("express");
 const app = express();
 const checkDate = require("./middlewares/checkDate");
-
 const cors = require("cors");
-const validarFechaInvalida = require("./utils/invalidDate");
 app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
@@ -16,13 +14,11 @@ app.get("/", function (req, res) {
 
 app.get("/api/:date?", checkDate, function (req, res) {
   const { date } = req.params;
-  let newDate = new Date();
-  console.log(date);
-  if (date) {
-    if (validarFechaInvalida(date)) {
-      return res.json({ error: "Invalid Date" });
-    }
-    newDate = new Date(date);
+
+  const newDate = new Date(date);
+
+  if (newDate.toString() === "Invalid Date") {
+    return res.json({ error: "Invalid Date" });
   }
 
   const unixtime = Number(newDate.getTime());
