@@ -13,7 +13,11 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/:date?", checkDate, function (req, res) {
-  const { date } = req.params;
+  let { date } = req.params;
+
+  if (!date) {
+    date = new Date();
+  }
 
   const newDate = new Date(date);
 
